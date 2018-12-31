@@ -1,52 +1,50 @@
 pacman::p_load(dplyr, tidyr, purrr, readr, stringr, lubridate, ggplot2)
 
-setwd("C:/Users/atm/Google Drive/Aktier")
-
-# Indlæs beløbsgrænser
-beløbsgrænse <- as.data.frame(
+# IndlÃ¦s belÃ¸bsgrÃ¦nser
+beloebsgraense <- as.data.frame(
                               matrix(c(2016, 50600, 
                               2017, 51700), ncol=2, byrow=TRUE)
                               )
-colnames(beløbsgrænse) <- c("år", "grænse")                   
-beløbsgrænse$år <- as.character(beløbsgrænse$år)
+colnames(beloebsgraense) <- c("aar", "graense")                   
+beloebsgraense <- as.character(beloebsgraense)
 
-# Indlæs transaktionsdata
+# Indl?s transaktionsdata
 data <- read.table("transaktionsfil.csv", sep=";", dec=",", header=T, stringsAsFactors = F)
 
-data$år <- format(parse_date_time(data$Valørdag, orders="Ymd", tz="UTC"), "%Y")
+data$?r <- format(parse_date_time(data$Val?rdag, orders="Ymd", tz="UTC"), "%Y")
 
-# Opgørelse af udbytter
+# Opg?relse af udbytter
 udbytteData <- data[which(data$Transaktionstype=="UDB."), ]
 
-udbytteData$Beløb <- gsub(udbytteData$Beløb, pattern='[.]', replacement='')
-udbytteData$Beløb <- gsub(udbytteData$Beløb, pattern='[,]', replacement='.')
-udbytteData$Beløb <- as.numeric(udbytteData$Beløb)
+udbytteData$Bel?b <- gsub(udbytteData$Bel?b, pattern='[.]', replacement='')
+udbytteData$Bel?b <- gsub(udbytteData$Bel?b, pattern='[,]', replacement='.')
+udbytteData$Bel?b <- as.numeric(udbytteData$Bel?b)
 
-udbytter <- aggregate(udbytteData$Beløb, by=list(Category=udbytteData$år), FUN=sum)
-colnames(udbytter) <- c("år", "udbytter")                   
+udbytter <- aggregate(udbytteData$Bel?b, by=list(Category=udbytteData$?r), FUN=sum)
+colnames(udbytter) <- c("?r", "udbytter")                   
 
-# Opgørelse af avancer
-avanceData <- data[which(data$Transaktionstype %in% c("INDLØSNING OVERF. VP", "SOLGT")), ]
+# Opg?relse af avancer
+avanceData <- data[which(data$Transaktionstype %in% c("INDL?SNING OVERF. VP", "SOLGT")), ]
 
 avanceData$Resultat <- gsub(avanceData$Resultat, pattern='[.]', replacement='')
 avanceData$Resultat <- gsub(avanceData$Resultat, pattern='[,]', replacement='.')
 avanceData$Resultat <- as.numeric(avanceData$Resultat)
 
-avancer <- aggregate(avanceData$Resultat, by=list(Category=avanceData$år), FUN=sum)
-colnames(avancer) <- c("år", "avancer")
+avancer <- aggregate(avanceData$Resultat, by=list(Category=avanceData$?r), FUN=sum)
+colnames(avancer) <- c("?r", "avancer")
 
-# Opgørelse af handelsomkostninger
+# Opg?relse af handelsomkostninger
 data$Afgifter <- gsub(data$Afgifter, pattern='[.]', replacement='')
 data$Afgifter <- gsub(data$Afgifter, pattern='[,]', replacement='.')
 data$Afgifter <- as.numeric(data$Afgifter)
 
-afgifter <- aggregate(data$Afgifter, by=list(Category=data$år), FUN=sum)
-colnames(afgifter) <- c("år", "afgifter")
+afgifter <- aggregate(data$Afgifter, by=list(Category=data$?r), FUN=sum)
+colnames(afgifter) <- c("?r", "afgifter")
 
-# Sammenstilling af årsresultat
-årsopgørelse <- list(avancer, udbytter, afgifter, beløbsgrænse) %>%  Reduce(function(dtf1,dtf2) left_join(dtf1, dtf2, by="år"), .)
-årsopgørelse$aktieindkomst <- rowSums(årsopgørelse[, c(2:3)])
-årsopgørelse$omkostningsprocent <- årsopgørelse$afgifter/årsopgørelse$aktieindkomst*100
+# Sammenstilling af ?rsresultat
+?rsopg?relse <- list(avancer, udbytter, afgifter, bel?bsgr?nse) %>%  Reduce(function(dtf1,dtf2) left_join(dtf1, dtf2, by="?r"), .)
+?rsopg?relse$aktieindkomst <- rowSums(?rsopg?relse[, c(2:3)])
+?rsopg?relse$omkostningsprocent <- ?rsopg?relse$afgifter/?rsopg?relse$aktieindkomst*100
 
 
 
