@@ -52,22 +52,22 @@ amount
 2016
 </td>
 <td style="text-align:right;">
-10818.66
+10,819
 </td>
 <td style="text-align:right;">
-9341.37
+9,341
 </td>
 <td style="text-align:right;">
-20160.03
+20,160
 </td>
 <td style="text-align:right;">
-50600
+50,600
 </td>
 <td style="text-align:left;">
 Realize Gains
 </td>
 <td style="text-align:right;">
-30439.97
+30,440
 </td>
 </tr>
 <tr>
@@ -75,22 +75,22 @@ Realize Gains
 2017
 </td>
 <td style="text-align:right;">
-21877.65
+21,878
 </td>
 <td style="text-align:right;">
-11861.68
+11,862
 </td>
 <td style="text-align:right;">
-33739.33
+33,739
 </td>
 <td style="text-align:right;">
-51700
+51,700
 </td>
 <td style="text-align:left;">
 Realize Gains
 </td>
 <td style="text-align:right;">
-17960.67
+17,961
 </td>
 </tr>
 <tr>
@@ -98,22 +98,22 @@ Realize Gains
 2018
 </td>
 <td style="text-align:right;">
--884.58
+-885
 </td>
 <td style="text-align:right;">
-43644.49
+43,644
 </td>
 <td style="text-align:right;">
-42759.91
+42,760
 </td>
 <td style="text-align:right;">
-52900
+52,900
 </td>
 <td style="text-align:left;">
 Realize Gains
 </td>
 <td style="text-align:right;">
-10140.09
+10,140
 </td>
 </tr>
 </tbody>
