@@ -24,25 +24,25 @@ tax_income <- calcyourtax(nordnet)
 <thead>
 <tr>
 <th style="text-align:left;">
-year
+Year
 </th>
 <th style="text-align:right;">
-profit
+Profits
 </th>
 <th style="text-align:right;">
-dividend
+Dividends
 </th>
 <th style="text-align:right;">
-tax\_income
+Tax Income
 </th>
 <th style="text-align:right;">
-bracket\_limit
+Bracket limit
 </th>
 <th style="text-align:left;">
-how\_to\_optimize
+How to optimize
 </th>
 <th style="text-align:right;">
-amount
+Amount
 </th>
 </tr>
 </thead>
