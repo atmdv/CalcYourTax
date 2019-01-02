@@ -2,7 +2,9 @@
 title: "Optimize the tax on your stock holdings."
 author: "Andreas Tyge Møller"
 date: "2 jan 2019"
-output: html_document
+output: 
+ md_document:
+    variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
@@ -39,7 +41,10 @@ pacman::p_load(dplyr, tidyr, purrr, readr, stringr, lubridate, ggplot2,
 source("CalcYourTax.R", encoding="utf-8")
 ```
 ```{r calcyourtax}
-calcyourtax(nordnet)
+tax_income <- calcyourtax(nordnet)
+```
+```{r output, echo=FALSE}
+knitr::kable(tax_income)
 ```
 
 So in each of the previous three years I should have realized more gains in

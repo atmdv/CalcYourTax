@@ -34,9 +34,11 @@ calcyourtax <- function(x){
                                   "Harvest Losses", "Realize Gains"),
            amount=abs(tax_income-bracket_limit))
   
-  kable(tax_income, digits=0, format.args = list(big.mark = ",")) %>%
-    kable_styling()
-    
+    # kable(tax_income, digits=0, format.args = list(big.mark = ",")) %>%
+  #   kable_styling()
+
+  return(tax_income)
+  
 }
 
 
