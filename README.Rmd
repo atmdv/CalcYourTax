@@ -45,8 +45,9 @@ tax_income <- calcyourtax(nordnet)
 ```
 ```{r output, echo=FALSE}
 knitr::kable(tax_income,
-             col.names=c("Year", "Profits", "Dividends", "Tax Income",
-                        "Bracket limit", "How to optimize", "Amount"),
+             col.names= c("Year", "Profits", "Dividends", "Tax Income",
+                         "Bracket limit", "How to optimize", "Amount"),
+             align = c("c", "r", "r", "r", "r", "l", "r"),
              digits=0, format.args = list(big.mark = ",")) 
 ```
 

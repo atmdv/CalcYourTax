@@ -23,7 +23,7 @@ tax_income <- calcyourtax(nordnet)
 <table>
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:center;">
 Year
 </th>
 <th style="text-align:right;">
@@ -48,7 +48,7 @@ Amount
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:center;">
 2016
 </td>
 <td style="text-align:right;">
@@ -71,7 +71,7 @@ Realize Gains
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:center;">
 2017
 </td>
 <td style="text-align:right;">
@@ -94,7 +94,7 @@ Realize Gains
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:center;">
 2018
 </td>
 <td style="text-align:right;">
