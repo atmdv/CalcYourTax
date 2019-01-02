@@ -8,7 +8,7 @@ This package allows you to easily import data from Nordnet portfolio accounts. I
 How it works
 ============
 
-First step is to export the entire transaction history from you Nordnet portfolio account. Then specify the file path for the transactions file.
+First step is to export the entire transaction history from your Nordnet portfolio account. Then specify the file path for the transactions file.
 
 ``` r
 nordnet <- "transaktionsfil.csv"
@@ -32,5 +32,5 @@ To-do:
 ======
 
 -   Package functions
--   Add detailed data for country specific withheld tax rates on dividends
+-   Add additional details for country specific withheld tax rates on dividends
 -   Add support for DeGiro accounts

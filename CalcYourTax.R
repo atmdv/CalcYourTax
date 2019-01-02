@@ -6,7 +6,13 @@ calcyourtax <- function(x){
                         header=T, stringsAsFactors = F)
   nordnet$year <- format(parse_date_time(nordnet$Valørdag,
                                          orders="Ymd", tz="UTC"), "%Y")
-  nordnet$country <- ifelse(nordnet$Vekslingskurs==1, "Denmark", "Abroad")
+  nordnet$country <- ifelse(nordnet$Vekslingskurs==1, "DK", "Other")
+  nordnet$country <- ifelse(nordnet$country=="Other" &
+                              substr(nordnet$ISIN, start = 1, stop = 2)=="DE",
+                            "DE", nordnet$country)
+  nordnet$country <- ifelse(nordnet$country=="Other" &
+                              substr(nordnet$ISIN, start = 1, stop = 2)=="NO",
+                            "NO", nordnet$country)
   
   # Calculate profits
   source("calcYourProfits.R", encoding="utf-8")
