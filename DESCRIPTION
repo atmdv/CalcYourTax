@@ -1,0 +1,11 @@
+Package: CalcYourTax
+Title: Easy calculation of tax on investment income
+Version: 0.1
+Authors@R: person("Andreas", "Moller", email = "first.last@example.com",
+                  role = c("aut", "cre"))
+Description: Calculate your tax easily, and get feedback on how to optimize your tax.
+Depends: R (>= 3.5.2)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, tidyr, purrr, readr, stringr, lubridate, ggplot2, kableExtra
