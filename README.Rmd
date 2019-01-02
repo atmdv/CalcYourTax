@@ -1,0 +1,54 @@
+---
+title: "Optimize the tax on your stock holdings."
+author: "Andreas Tyge Møller"
+date: "2 jan 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Calculate your tax easily, and get feedback on how to optimize your tax
+
+Income from stock holdings outside of retirement savings accounts is taxed with
+two different tax rates, 27 percent and 42 percent respectively, depending on
+which tax bracket the income falls into.
+
+This package allows you to easily import data from Nordnet portfolio accounts.
+It then automatically calculates your total taxable income, and provides advice
+on actions to take to optimize the long term taxation on your income from stocks.
+In order to optimize the tax rate, the income in the lowest tax bracket should
+be maximized. Conversely, income in the highest tax bracket should be minimized.
+
+# How it works
+
+First step is to export the entire transaction history from you Nordnet
+portfolio account. Then specify the file path for the transactions file.
+
+```{r transactions}
+nordnet <- "transaktionsfil.csv"
+```
+
+Now with a single function call, calculate your taxable income for every year in
+the transactions history:
+
+```{r initiate, echo=FALSE}
+pacman::p_load(dplyr, tidyr, purrr, readr, stringr, lubridate, ggplot2,
+               kableExtra)
+source("CalcYourTax.R", encoding="utf-8")
+```
+```{r calcyourtax}
+calcyourtax(nordnet)
+```
+
+So in each of the previous three years I should have realized more gains in
+order to maximize my income in the lowest tax bracket. Too bad I didn't have
+this tool handy!
+
+# To-do:
+
+* Package functions
+* Add detailed data for country specific withheld tax rates on dividends
+* Add support for DeGiro accounts
+
