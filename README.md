@@ -20,104 +20,12 @@ Now with a single function call, calculate your taxable income for every year in
 tax_income <- calcyourtax(nordnet)
 ```
 
-<table>
-<thead>
-<tr>
-<th style="text-align:center;">
-Year
-</th>
-<th style="text-align:right;">
-Profits
-</th>
-<th style="text-align:right;">
-Dividends
-</th>
-<th style="text-align:right;">
-Tax Income
-</th>
-<th style="text-align:right;">
-Bracket limit
-</th>
-<th style="text-align:left;">
-How to optimize
-</th>
-<th style="text-align:right;">
-Amount
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-2016
-</td>
-<td style="text-align:right;">
-10,819
-</td>
-<td style="text-align:right;">
-9,341
-</td>
-<td style="text-align:right;">
-20,160
-</td>
-<td style="text-align:right;">
-50,600
-</td>
-<td style="text-align:left;">
-Realize Gains
-</td>
-<td style="text-align:right;">
-30,440
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-2017
-</td>
-<td style="text-align:right;">
-21,878
-</td>
-<td style="text-align:right;">
-11,862
-</td>
-<td style="text-align:right;">
-33,739
-</td>
-<td style="text-align:right;">
-51,700
-</td>
-<td style="text-align:left;">
-Realize Gains
-</td>
-<td style="text-align:right;">
-17,961
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-2018
-</td>
-<td style="text-align:right;">
--885
-</td>
-<td style="text-align:right;">
-43,644
-</td>
-<td style="text-align:right;">
-42,760
-</td>
-<td style="text-align:right;">
-52,900
-</td>
-<td style="text-align:left;">
-Realize Gains
-</td>
-<td style="text-align:right;">
-10,140
-</td>
-</tr>
-</tbody>
-</table>
+| Year |  Profits|  Dividends|  Tax Income|  Bracket limit| How to optimize |  Amount|
+|:----:|--------:|----------:|-----------:|--------------:|:----------------|-------:|
+| 2016 |   10,819|      9,341|      20,160|         50,600| Realize Gains   |  30,440|
+| 2017 |   21,878|     11,862|      33,739|         51,700| Realize Gains   |  17,961|
+| 2018 |     -885|     43,644|      42,760|         52,900| Realize Gains   |  10,140|
+
 So in each of the previous three years I should have realized more gains in order to maximize my income in the lowest tax bracket. Too bad I didn't have this tool handy!
 
 To-do:

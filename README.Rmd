@@ -48,7 +48,7 @@ knitr::kable(tax_income,
              col.names= c("Year", "Profits", "Dividends", "Tax Income",
                          "Bracket limit", "How to optimize", "Amount"),
              align = c("c", "r", "r", "r", "r", "l", "r"),
-             digits=0, format.args = list(big.mark = ",")) 
+             digits=0, format="markdown", format.args = list(big.mark = ",")) 
 ```
 
 So in each of the previous three years I should have realized more gains in
