@@ -1,6 +1,9 @@
 
 calcyourtax <- function(x){
 
+  pacman::p_load(dplyr, tidyr, purrr, readr, stringr, lubridate, ggplot2,
+                 kableExtra)
+  
   # Import transaction data
   nordnet <- read.table(nordnet, sep=";", dec=",",
                         header=T, stringsAsFactors = F)
@@ -15,11 +18,9 @@ calcyourtax <- function(x){
                             "NO", nordnet$country)
   
   # Calculate profits
-  source("calcYourProfits.R", encoding="utf-8")
   profits <- calcyourprofits(nordnet)
   
   # Calculate dividends
-  source("calcYourDividends.R", encoding="utf-8")
   dividends <- calcyourdividends(nordnet)
   
   # Tax brackets

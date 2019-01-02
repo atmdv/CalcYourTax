@@ -17,6 +17,10 @@ nordnet <- "transaktionsfil.csv"
 Now with a single function call, calculate your taxable income for every year in the transactions history:
 
 ``` r
+library(CalcYourTax)
+```
+
+``` r
 tax_income <- calcyourtax(nordnet)
 ```
 
@@ -31,6 +35,5 @@ So in each of the previous three years I should have realized more gains in orde
 To-do:
 ======
 
--   Package functions
 -   Add additional details for country specific withheld tax rates on dividends
 -   Add support for DeGiro accounts
