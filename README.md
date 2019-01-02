@@ -17,10 +17,65 @@ nordnet <- "transaktionsfil.csv"
 Now with a single function call, calculate your taxable income for every year in the transactions history:
 
 ``` r
-library(CalcYourTax)
+devtools::install_github("atmdv/CalcYourTax")
 ```
 
+    ## Downloading GitHub repo atmdv/CalcYourTax@master
+
+    ## 
+    ##   
+      
+      
+       checking for file 'C:\Users\Andreas Tyge Moller\AppData\Local\Temp\RtmpuYeGvY\remotes2f9043473144\atmdv-CalcYourTax-d4af456/DESCRIPTION' ...
+      
+       checking for file 'C:\Users\Andreas Tyge Moller\AppData\Local\Temp\RtmpuYeGvY\remotes2f9043473144\atmdv-CalcYourTax-d4af456/DESCRIPTION' ... 
+      
+    v  checking for file 'C:\Users\Andreas Tyge Moller\AppData\Local\Temp\RtmpuYeGvY\remotes2f9043473144\atmdv-CalcYourTax-d4af456/DESCRIPTION'
+    ## 
+      
+      
+      
+    -  preparing 'CalcYourTax':
+    ## 
+      
+       checking DESCRIPTION meta-information ...
+      
+       checking DESCRIPTION meta-information ... 
+      
+    v  checking DESCRIPTION meta-information
+    ## 
+      
+      
+      
+    -  checking for LF line-endings in source and make files and shell scripts
+    ## 
+      
+    -  checking for empty or unneeded directories
+    ## 
+      
+    -  building 'CalcYourTax_0.1.tar.gz'
+    ## 
+      
+    Warning in utils::tar(filepath, pkgname, compression = "gzip", compression_level = 9L,  :
+      
+       Warning in utils::tar(filepath, pkgname, compression = "gzip", compression_level = 9L,  :
+    ##      file 'CalcYourTax/Opg+©relse.R' not found
+    ## 
+      
+    Warning in utils::tar(filepath, pkgname, compression = "gzip", compression_level = 9L,  :
+      
+       Warning in utils::tar(filepath, pkgname, compression = "gzip", compression_level = 9L,  :
+    ##      file 'CalcYourTax/V+ªrdipapirstatus.R' not found
+    ## 
+      
+       
+    ## 
+
+    ## Installing package into 'C:/Users/Andreas Tyge Moller/R/win-library/3.5'
+    ## (as 'lib' is unspecified)
+
 ``` r
+library(CalcYourTax)
 tax_income <- calcyourtax(nordnet)
 ```
 

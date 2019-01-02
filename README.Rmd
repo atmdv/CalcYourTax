@@ -35,10 +35,9 @@ nordnet <- "transaktionsfil.csv"
 Now with a single function call, calculate your taxable income for every year in
 the transactions history:
 
-```{r initiate}
-library(CalcYourTax)
-```
 ```{r calcyourtax}
+devtools::install_github("atmdv/CalcYourTax")
+library(CalcYourTax)
 tax_income <- calcyourtax(nordnet)
 ```
 ```{r output, echo=FALSE}
