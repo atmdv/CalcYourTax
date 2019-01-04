@@ -39,7 +39,7 @@ the transactions history:
 ```{r calcyourtax, }
 devtools::install_github("atmdv/CalcYourTax", quiet=TRUE)
 library(CalcYourTax)
-tax_income <- calcyourtax(nordnet=nordnet)
+tax_income <- calcyourtax(nordnet=nordnet, degiro=degiro)
 ```
 ```{r output, echo=FALSE}
 knitr::kable(tax_income,

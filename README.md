@@ -12,6 +12,7 @@ First step is to export the entire transaction history from your Nordnet portfol
 
 ``` r
 nordnet <- "transaktionsfil.csv"
+degiro <- "Account.csv"
 ```
 
 Now with a single function call, calculate your taxable income for every year in the transactions history:
@@ -19,7 +20,7 @@ Now with a single function call, calculate your taxable income for every year in
 ``` r
 devtools::install_github("atmdv/CalcYourTax", quiet=TRUE)
 library(CalcYourTax)
-tax_income <- calcyourtax(nordnet)
+tax_income <- calcyourtax(nordnet=nordnet)
 ```
 
 | Year |  Profits|  Dividends|  Tax Income|  Bracket limit| How to optimize |  Amount|
@@ -33,5 +34,5 @@ So in each of the previous three years I should have realized more gains in orde
 To-do:
 ======
 
+-   Build out full support for DeGiro accounts
 -   Add additional details for country specific withheld tax rates on dividends
--   Add support for DeGiro accounts
