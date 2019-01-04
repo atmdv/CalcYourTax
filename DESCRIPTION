@@ -8,4 +8,4 @@ Depends: R (>= 3.5.2)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr, tidyr, purrr, readr, stringr, lubridate, ggplot2, kableExtra
+Imports: dplyr, tidyr, purrr, readr, stringr, lubridate, kableExtra

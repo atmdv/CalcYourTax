@@ -23,14 +23,14 @@ calcyourdividends <- function(x){
   withheld$rate <- as.numeric(withheld$rate)
   
   # Calculate dividends by year
-  nordnet <- x
-  nordnet$Beløb <- sub(".", "", nordnet$Beløb, fixed = TRUE)
-  nordnet$Beløb <- sub(",", ".", nordnet$Beløb, fixed = TRUE)
-  nordnet$Beløb <- as.numeric(nordnet$Beløb)
-  dividends <- nordnet %>%
-    filter(Transaktionstype=="UDB.") %>% 
+  consolidated_portfolio <- x
+  consolidated_portfolio$amount <- sub(".", "", consolidated_portfolio$amount, fixed = TRUE)
+  consolidated_portfolio$amount <- sub(",", ".", consolidated_portfolio$amount, fixed = TRUE)
+  consolidated_portfolio$amount <- as.numeric(consolidated_portfolio$amount)
+  dividends <- consolidated_portfolio %>%
+    filter(transaction_type=="UDB.") %>% 
     left_join(withheld, by=c("year", "country")) %>% 
-    mutate(tax_income=Beløb/(1-rate)) %>% 
+    mutate(tax_income=amount/(1-rate)) %>% 
     group_by(year) %>% 
     summarise(dividend=sum(tax_income))
   
