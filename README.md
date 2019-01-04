@@ -20,7 +20,7 @@ Now with a single function call, calculate your taxable income for every year in
 ``` r
 devtools::install_github("atmdv/CalcYourTax", quiet=TRUE)
 library(CalcYourTax)
-tax_income <- calcyourtax(nordnet=nordnet)
+tax_income <- calcyourtax(nordnet=nordnet, degiro=degiro)
 ```
 
 | Year |  Profits|  Dividends|  Tax Income|  Bracket limit| How to optimize |  Amount|
